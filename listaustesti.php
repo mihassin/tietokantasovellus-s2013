@@ -1,7 +1,50 @@
 <?php
-  require_once "userdata.php";
 
-  $lista = UserData::getUserData();
+function annaYhteys() {
+  static $yhteys = null; //Muuttuja, jonka sisältö säilyy annaYhteys-kutsujen välillä.
+
+  if ($yhteys === null) {
+    $yhteys = new PDO('pgsql:');
+    $yhteys->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+  }
+
+  return $yhteys;
+}
+
+class Kayttaja {
+  private $first;
+  private $second;
+  private $email;
+  private $phone;
+
+  public static function getKayttajat() {
+    $sql = "SELECT first,second,email,phone from users";
+    $kysely = annaYhteys()->prepare($sql); $kysely->execute();
+
+    $tulokset = array();
+    foreach($kysely->fetchAll() as $tulos) {
+      $kayttaja = new Kayttaja();
+      foreach($tulos as $kentta => $arvo) {
+        $kayttaja->$kentta = $arvo;
+      }
+      $tulokset[] = $kayttaja;
+    }
+    return $tulokset;
+  }
+
+  public function getEtu() {
+    return $this->first;
+  }
+  public function getSuku() {
+    return $this->second;
+  }
+  public function getEmail() {
+    return $this->email;
+  }
+  public function getPhone() {
+    return $this->phone;
+  }
+  }
 ?>
 <!DOCTYPE html>
 <html>

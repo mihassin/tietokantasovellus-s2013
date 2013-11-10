@@ -1,7 +1,4 @@
 <?php
-require_once = "db_connection.php";
-
-$yhteys = db_connect();
 
 class UserData{
 
@@ -10,9 +7,22 @@ class UserData{
   private $email;
   private $phone;
 
+  public static function annaYhteys() {
+  static $yhteys = null; //Muuttuja, jonka sisältö säilyy annaYhteys-kutsujen välillä.
+
+  if ($yhteys === null) {
+    //Tämä koodi suoritetaan vain kerran, sillä seuraavilla
+    //funktion suorituskerroilla $yhteys-muuttujassa on sisältöä.
+    $yhteys = new PDO('pgsql:');
+    $yhteys->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+  }
+
+  return $yhteys;
+}
+
   public static function getUserData() {
     $sql = "SELECT first, second, email, phone FROM users";
-    $kysely = $yhteys->prepare($sql); $kysely->execute();
+    $kysely = annaYhteys()->prepare($sql); $kysely->execute();
 
     $tulokset = array();
     foreach($kysely->fetchAll() as $tulos) {

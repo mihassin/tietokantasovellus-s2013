@@ -12,6 +12,4 @@ DROP TABLE users;
 
 DROP TABLE product_types;
 
-DROP TABLE users;
-
 DROP TABLE role_types;

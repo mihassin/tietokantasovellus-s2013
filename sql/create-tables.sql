@@ -8,7 +8,7 @@ CREATE TABLE products (
   product_type_id int REFERENCES product_types(id) ON DELETE CASCADE,
   name varchar(30) NOT NULL,
   description varchar(255),
-  price decimal(6,2)
+  price real
 );
 
 CREATE TABLE role_types (
@@ -30,14 +30,14 @@ CREATE TABLE orders (
   user_id int REFERENCES users(id) ON DELETE CASCADE,
   address varchar(255) NOT NULL,
   deliver_time date NOT NULL,
-  total_price decimal(6,2)
+  total_price real
 );
 
 CREATE TABLE materials (
   id serial PRIMARY KEY,
   product_type_id int REFERENCES product_types(id) ON DELETE CASCADE,
   description varchar(30) NOT NULL,
-  price decimal(6,2)
+  price real
 );
 
 CREATE TABLE content_map (

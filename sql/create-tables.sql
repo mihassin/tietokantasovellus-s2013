@@ -1,3 +1,8 @@
+create table PRODUCT_TYPE(
+  product_type_id integer not null primary key,
+  description varchar(30) not null
+);
+
 create table PRODUCT(
   product_id integer not null primary key,
   FOREIGN key (product_type_id) REFERENCES PRODUCT_TYPE(product_type_id),
@@ -6,8 +11,8 @@ create table PRODUCT(
   price decimal(6,2)
 );
 
-create table PRODUCT_TYPE(
-  product_type_id integer not null primary key,
+create table ROLE_TYPE(
+  role_type_id integer not null primary key,
   description varchar(30) not null
 );
 
@@ -18,11 +23,6 @@ create table USER(
   second varchar(30) not null,
   e-mail varchar(255) not null,
   phone varchar(255) not null
-);
-
-create table ROLE_TYPE(
-  role_type_id integer not null primary key,
-  description varchar(30) not null
 );
 
 create table ORDER(
@@ -39,14 +39,14 @@ create table CART(
   amount integer not null
 );
 
-create table CONTENT(
-  FOREIGN key (product_id) REFERENCES PRODUCT(product_id),
-  FOREIGN key (material_id) REFERENCES MATERIAL(material_id)
-);
-
 create table MATERIAL(
   material_id integer not null primary key,
   FOREIGN key (product_type_id) REFERENCES PRODUCT_TYPE(product_type_id),
   description varchar(30) not null,
   price decimal(6,2)
+);
+
+create table CONTENT(
+  FOREIGN key (product_id) REFERENCES PRODUCT(product_id),
+  FOREIGN key (material_id) REFERENCES MATERIAL(material_id)
 );

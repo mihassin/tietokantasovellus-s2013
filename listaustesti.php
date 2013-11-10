@@ -19,22 +19,7 @@
         <th>Sähköposti</th>
         <th>Puhelin numero</th>
       </td>
-      <?php foreach($lista as $kayttaja): ?>
-      <td>
-        <tr>
-          <?php echo $kayttaja->getEtu(); ?>
-        </tr>
-        <tr>
-           <?php echo $kayttaja->getSuku(); ?>
-        </tr>
-        <tr>
-           <?php echo $kayttaja->getEmail(); ?>
-        </tr>
-        <tr>
-           <?php echo $kayttaja->getPhone(); ?>
-        </tr>
-      </td>
-      <?php endforeach; ?>
+
     </table>
   </body>
 </html>

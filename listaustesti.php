@@ -12,7 +12,7 @@
   </head>
   <body>
     <h1>Käyttäjät</h1>
-    <table>
+    <table border="1">
       <tr>
         <th>Etunimi</th>
         <th>Sukunimi</th>

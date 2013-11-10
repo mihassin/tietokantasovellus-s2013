@@ -1,7 +1,8 @@
 tietokantasovellus-s2013
 ========================
 viikko 2:
-dokumentointi tehty,
-html-demot tehty,
-tietokannoista sql-tiedostot ja connectiontest,
-omaa listaus testiä en saanut toimimaan, ongelmia vielä php-syntaxissa
+1. dokumentointi tehty,
+
+2. html-demot tehty,
+
+3. tietokannoista sql-tiedostot ja connectiontest

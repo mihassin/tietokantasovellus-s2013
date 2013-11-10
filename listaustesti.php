@@ -1,18 +1,8 @@
+
 <?php
-$yhteys = new PDO("psql:");
-$yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO:ERRMODE_EXCEPTION);
-
-$kysely = $yhteys->prepare("SELECT * FROM users");
-$kysely->execute();
-
-echo "<table>";
-echo "<tr>";
-echo "<th>Nimi</th>";
-echo "</tr>";
-while($rivi = $kysely->fetch()) {
-	echo "<tr>";
-	echo "<td>" . htmlspecialchars($rivi["first"]) . "</td>";
-	echo "</tr>";
-}
-echo "</table>";
+$yhteys = pg_connect("host=localhost dbname=mihassin user=mihassin password=55f580744fb4df2e");
+$kysely = pg_query($yhteys, "SELECT * FROM users");
+$tulos = pg_num_rows($kysely);
+echo $tulos;
+echo "<p>moi</p>";
 ?>

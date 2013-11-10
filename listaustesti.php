@@ -13,13 +13,20 @@
   <body>
     <h1>Käyttäjät</h1>
     <table>
-      <td>
+      <tr>
         <th>Etunimi</th>
         <th>Sukunimi</th>
         <th>Sähköposti</th>
         <th>Puhelin numero</th>
-      </td>
-
+      </tr>
+      <?php foreach($lista as $asia) { ?>
+      <tr>
+        <td><?php echo $asia->getEtu(); ?></td>
+        <td><?php echo $asia->getSuku(); ?></td>
+        <td><?php echo $asia->getEmail(); ?></td>
+        <td><?php echo $asia->getPhone(); ?></td>
+      </tr>
+      <?php } ?>
     </table>
   </body>
 </html>

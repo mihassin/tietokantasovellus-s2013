@@ -9,7 +9,7 @@ class UserData{
   private $phone;
 
   public static function getUserData() {
-    $sql = "SELECT id, role_type_id, first, second, email, phone FROM users";
+    $sql = "SELECT first, second, email, phone FROM users";
     $kysely = getDB()->prepare($sql); $kysely->execute();
 
     $tulokset = array();
@@ -17,7 +17,7 @@ class UserData{
       $kayttaja = new UserData();
 
       foreach($tulos as $kentta => $arvo) {
-        $kayttaja->$kentta = $arvo
+        $kayttaja->$kentta = $arvo;
       }
       $tulokset[] = $kayttaja;
     }

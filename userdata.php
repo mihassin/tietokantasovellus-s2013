@@ -1,8 +1,10 @@
 <?php
+require_once = "db_connection.php";
+
+$yhteys = db_connect();
+
 class UserData{
 
-  private $id;
-  private $role_type_id;
   private $first;
   private $second;
   private $email;
@@ -10,7 +12,7 @@ class UserData{
 
   public static function getUserData() {
     $sql = "SELECT first, second, email, phone FROM users";
-    $kysely = getDB()->prepare($sql); $kysely->execute();
+    $kysely = $yhteys->prepare($sql); $kysely->execute();
 
     $tulokset = array();
     foreach($kysely->fetchAll() as $tulos) {

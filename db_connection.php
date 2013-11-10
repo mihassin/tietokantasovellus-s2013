@@ -1,10 +1,7 @@
 <?php
-
-  try {
-    $yhteys = new PDO("pgsql:dbname=users");
-  } catch(PDOException $e) {
-    die("ERROR: " . $e->getMessage());
+  function db_connect() {
+    $yhteys = new PDO("pgsql:");
+    $yhteys->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+    return $yhteys;
   }
-
-  $yhteys->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 ?>

@@ -6,3 +6,6 @@ viikko 2:
 2. html-demot tehty,
 
 3. tietokannoista sql-tiedostot ja connectiontest
+
+listaustesti toimii:
+mihassin.users.cs.helsinki.fi/listaustesti.php

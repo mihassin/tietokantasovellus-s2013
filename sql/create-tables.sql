@@ -1,9 +1,9 @@
-CREATE TABLE product_type (
+CREATE TABLE product_types (
   id serial PRIMARY KEY,
   description varchar(30) NOT NULL
 );
 
-CREATE TABLE product (
+CREATE TABLE products (
   id serial PRIMARY KEY,
   product_type_id int REFERENCES product_type(id) ON DELETE CASCADE,
   name varchar(30) NOT NULL,
@@ -11,12 +11,12 @@ CREATE TABLE product (
   price decimal(6,2)
 );
 
-CREATE TABLE role_type (
+CREATE TABLE role_types (
   id serial PRIMARY KEY,
   description varchar(30) NOT NULL
 );
 
-CREATE TABLE user (
+CREATE TABLE users (
   id serial PRIMARY KEY,
   role_type_id int REFERENCES role_type(id) ON DELETE CASCADE,
   first varchar(30) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE user (
   phone varchar(255) NOT NULL
 );
 
-CREATE TABLE order (
+CREATE TABLE orders (
   id serial PRIMARY KEY,
   user_id int REFERENCES user(id) ON DELETE CASCADE,
   address varchar(255) NOT NULL,
@@ -33,21 +33,21 @@ CREATE TABLE order (
   total_price decimal(6,2)
 );
 
-CREATE TABLE material (
+CREATE TABLE materials (
   id serial PRIMARY KEY,
   product_type_id int REFERENCES product_type(id) ON DELETE CASCADE,
   description varchar(30) NOT NULL,
   price decimal(6,2)
 );
 
-CREATE TABLE content (
+CREATE TABLE content_map (
   id serial PRIMARY KEY,
   product_id int REFERENCES product(id) ON DELETE CASCADE,
   material_id int REFERENCES material(id) ON DELETE CASCADE,
   UNIQUE(product_id, material_id)
 );
 
-CREATE TABLE cart (
+CREATE TABLE cart_map (
   id serial PRIMARY KEY,
   order_id int REFERENCES order(id) ON DELETE CASCADE,
   product_id int REFERENCES product(id) ON DELETE CASCADE,

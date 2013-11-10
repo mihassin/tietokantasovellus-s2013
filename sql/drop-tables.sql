@@ -1,15 +1,15 @@
-drop table PRODUCT;
+DROP TABLE products;
 
-drop table PRODUCT_TYPE;
+DROP TABLE product_types;
 
-drop table USER;
+DROP TABLE users;
 
-drop table ROLE_TYPE;
+DROP TABLE role_types;
 
-drop table ORDER;
+DROP TABLE orders;
 
-drop table CART;
+DROP TABLE cart_map;
 
-drop table CONTENT;
+DROP TABLE content_map;
 
-drop table MATERIAL;
+DROP TABLE materials;

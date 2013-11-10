@@ -1,52 +1,52 @@
-create table PRODUCT_TYPE(
-  product_type_id integer not null primary key,
-  description varchar(30) not null
+CREATE TABLE product_type (
+  id serial PRIMARY KEY,
+  description varchar(30) NOT NULL
 );
 
-create table PRODUCT(
-  product_id integer not null primary key,
-  FOREIGN key (product_type_id) REFERENCES PRODUCT_TYPE(product_type_id),
-  name varchar(30) not null,
+CREATE TABLE product (
+  id serial PRIMARY KEY,
+  product_type_id REFERENCES product_type(id) ON DELETE CASCADE,
+  name varchar(30) NOT NULL,
   description varchar(255),
   price decimal(6,2)
 );
 
-create table ROLE_TYPE(
-  role_type_id integer not null primary key,
-  description varchar(30) not null
+CREATE TABLE role_type (
+  id serial PRIMARY KEY,
+  description varchar(30) NOT NULL
 );
 
-create table USER(
-  user_id integer not null primary key,
-  FOREIGN key (role_type_id) REFERENCES ROLE_TYPE(role_type_id),
-  first varchar(30) not null,
-  second varchar(30) not null,
-  e-mail varchar(255) not null,
-  phone varchar(255) not null
+CREATE TABLE user (
+  id serial PRIMARY KEY,
+  role_type_id REFERENCES role_type(id) ON DELETE CASCADE,
+  first varchar(30) NOT NULL,
+  second varchar(30) NOT NULL,
+  e-mail varchar(255) NOT NULL,
+  phone varchar(255) NOT NULL
 );
 
-create table ORDER(
-  order_id integer not null primary key,
-  FOREIGN key (user_id) REFERENCES USER(user_id),
-  address varchar(255) not null,
-  deliver_time date not null,
+CREATE TABLE order (
+  id serial PRIMARY KEY,
+  user_id REFERENCES user(id) ON DELETE CASCADE,
+  address varchar(255) NOT NULL,
+  deliver_time date NOT NULL,
   total_price decimal(6,2)
 );
 
-create table CART(
-  FOREIGN key (order_id) REFERENCES ORDER(order_id),
-  FOREIGN key (product_id) REFERENCES PRODUCT(product_id),
-  amount integer not null
-);
-
-create table MATERIAL(
-  material_id integer not null primary key,
-  FOREIGN key (product_type_id) REFERENCES PRODUCT_TYPE(product_type_id),
-  description varchar(30) not null,
+CREATE TABLE material (
+  id serial PRIMARY KEY,
+  product_type_id REFERENCES product_type(id) ON DELETE CASCADE,
+  description varchar(30) NOT NULL,
   price decimal(6,2)
 );
 
-create table CONTENT(
-  FOREIGN key (product_id) REFERENCES PRODUCT(product_id),
-  FOREIGN key (material_id) REFERENCES MATERIAL(material_id)
-);
+--CREATE TABLE content (
+  --product_id REFERENCES product(id) ON DELETE CASCADE,
+  --material_id REFERENCES material(id) ON DELETE CASCADE
+--);
+
+--CREATE TABLE CART(
+  --order_id REFERENCES ORDER(order_id),
+  --product_id REFERENCES PRODUCT(product_id),
+  --amount integer NOT NULL
+--);

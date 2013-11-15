@@ -1,6 +1,6 @@
 <?php
 require_once 'db_connect.php';
-
+function getList($kysely) {
 	$yhteys = getConnection(); 
 	$query = pg_query($yhteys, $kysely);
 	$rows = pg_num_rows($query);
@@ -27,5 +27,5 @@ require_once 'db_connect.php';
 	echo "</tr>";
 	}
 	echo "</table>";
-
+}
 ?>

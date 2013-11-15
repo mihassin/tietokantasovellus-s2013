@@ -1,6 +1,7 @@
 
 <?php
-$yhteys = pg_connect("host=localhost dbname=mihassin user=mihassin password=55f580744fb4df2e");
+require_once 'libs/db_connect.php';
+$yhteys = getConnection();
 $kysely = pg_query($yhteys, "SELECT * FROM users");
 $tulos = pg_num_rows($kysely);
 echo $tulos;

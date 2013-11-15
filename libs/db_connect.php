@@ -1,6 +1,9 @@
 <?php
-function connect2db() {
-$connection = pg_connect("dbname=mihassin user=mihassin")
+function getConnection() {
+require_once 'secret.php';
+$constr = getNfo();
+$connection = pg_connect($constr)
 or die('Yhteys epäonnistui: ' . pg_last_error());
 return $connection;
 }
+?>

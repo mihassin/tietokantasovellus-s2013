@@ -1,6 +1,5 @@
-<?php
-require '/../libs/listing.php';
-?><!DOCTYPE html>
+<?php $kysely = "SELECT email, first, second, phone FROM users"; ?>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -8,9 +7,6 @@ require '/../libs/listing.php';
     </head>
     <body>
         <h1>Käyttäjät</h1>
-	<?php
-	$query = "SELECT email, first, second, phone FROM users";
-	getList($query);	
-	?>
+	<?php require_once __DIR__.'/../libs/listing.php'; ?>
     </body>
 </html>

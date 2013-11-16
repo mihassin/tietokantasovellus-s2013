@@ -21,12 +21,19 @@ insert into role_types values
   (4, 'admin');
 
 insert into users values
-  (1, 4, 'Donald', 'Trump', 'D2daT@illuminati.gov', '555-1337'),
-  (2, 2, 'Barax', 'Obeymah', 'yeswecan@hope.org', '555-944834673'),
-  (3, 3, 'Obama', 'bin Einlager', 'niceguy@fedex.org', '0700-460266464'),
-  (4, 1, 'Ebin', 'Maestro', 'skill@me.tru', '040-696243'),
-  (5, 1, 'Kripp', 'arrian', 'kripp@poe.pro', '555-6659075455'),
-  (6, 1, 'Mr', 'Zeus', 'god@olympos.gr', '555-463');
+  (1, 4, 'Donald', 'Trump', 'D2daT@illuminati.gov', '555-1337', md5('pw1'), substring(md5(random()::TEXT) from 1 for 8)),
+  (2, 2, 'Barax', 'Obeymah', 'yeswecan@hope.org', '555-944834673', md5('pw2'), substring(md5(random()::TEXT) from 1 for 8)),
+  (3, 3, 'Obama', 'bin Einlager', 'niceguy@fedex.org', '0700-460266464', md5('pw3'), substring(md5(random()::TEXT) from 1 for 8)),
+  (4, 1, 'Ebin', 'Maestro', 'skill@me.tru', '040-696243', md5('pw4'), substring(md5(random()::TEXT) from 1 for 8)),
+  (5, 1, 'Kripp', 'arrian', 'kripp@poe.pro', '555-6659075455', md5('pw5'), substring(md5(random()::TEXT) from 1 for 8)),
+  (6, 1, 'Mr', 'Zeus', 'god@olympos.gr', '555-463', md5('pw1'), substring(md5(random()::TEXT) from 1 for 8));
+
+UPDATE users SET pw_hash=md5('pw1' || users.pw_salt) WHERE id=1;
+UPDATE users SET pw_hash=md5('pw2' || users.pw_salt) WHERE id=2;
+UPDATE users SET pw_hash=md5('pw3' || users.pw_salt) WHERE id=3;
+UPDATE users SET pw_hash=md5('pw4' || users.pw_salt) WHERE id=4;
+UPDATE users SET pw_hash=md5('pw5' || users.pw_salt) WHERE id=5;
+UPDATE users SET pw_hash=md5('pw6' || users.pw_salt) WHERE id=6;
 
 insert into orders values
   (1, 5, 'us and a', '2013-11-10', 1337.00),

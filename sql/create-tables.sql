@@ -22,7 +22,9 @@ CREATE TABLE users (
   first varchar(30) NOT NULL,
   second varchar(30) NOT NULL,
   email varchar(255) NOT NULL,
-  phone varchar(255) NOT NULL
+  phone varchar(255) NOT NULL,
+  pw_hash text,
+  pw_salt text<
 );
 
 CREATE TABLE orders (

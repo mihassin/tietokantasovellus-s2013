@@ -1,9 +1,4 @@
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Uusi käyttäjä</title>
-</head>
-<body>
+<?php require_once 'header.php'; ?>
 	<h1>Luo käyttäjätunnus</h1>
 	<div>
 	<form method="post">
@@ -17,9 +12,7 @@
 		<input type="text" name="second" id="second" /></br>		
 		<label>Puhelin numero</label></br>
 		<input type="text" name="phone" id="phone" /></br></br>	
-		<input type="submit" name="luotunnus-nappi" id="luotunnus-nappi" value="Luo tunnus"/>	
-		<input type="submit" name="kirjaudu-sisään" id="kirjaudu-sisään" formaction="login.php" value="Kirjaudu sisään"/>	
+		<input type="submit" name="luotunnus-nappi" id="luotunnus-nappi" value="Luo tunnus"/>		
 	</form>
 	</div>
-</body>
-</html>
+<?php require_once 'footer.php'; ?>

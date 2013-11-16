@@ -1,8 +1,10 @@
 <?php
-echo "<head><title>Pizzapalvelu</title></head>";
-echo "<body><nav>";
-echo "<a href='index.php'>Etusivu</a>";
-echo "<a href='login.php'>Kirjaudu sisään</a>";
-echo "<a href='newuser.php'>Luo tunnus</a>";
-echo "</nav></br>";
+echo "<!DOCTYPE html><html>
+<head>
+<title>Pizzapalvelu</title></head>
+<body><nav>
+<a href='index.php'>Etusivu</a>
+<a href='login.php'>Kirjaudu sisään</a>
+<a href='newuser.php'>Luo tunnus</a>
+</nav></br>";
 ?>

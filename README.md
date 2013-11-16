@@ -8,11 +8,11 @@ viikko 3:
 
 3. etusivu uudistettu,
 
-4. ruoka, juoma, lisuke, käyttäjälistat ja yleinen listaus funktio,
+4. tietokannassa muutoksia: usersilla kaksi uutta saraketta pw_salt ja pw_hash
 
 5. tietokanta yhteys funktio,
 
-6. mvc-malli(libs ja sen sisäinen models kansio, views kansio)
+6. mvc-malliin pyrkimys
 
 Pizzapalvelu toimii:
 mihassin.users.cs.helsinki.fi

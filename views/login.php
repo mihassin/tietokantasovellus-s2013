@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Kirjaudu sisään</title>
-</head>
-<body>
+<?php require_once 'header.php'; ?>
 	<h1>Kirjaudu sisään</h1>
 	<div>
 	<form method="post">
@@ -16,5 +10,4 @@
 		<input type="submit" name="ua-nappi" id="ua-nappi" formaction="newuser.php" value="Luo tunnus" />
 	</form>
 	</div>
-</body>
-</html>
+<?php require_once 'footer.php'; ?>

@@ -1,4 +1,5 @@
-<?php $kysely = "SELECT name, price FROM products WHERE product_type_id='2'"; 
+<?php require_once 'libs/listqueries.php';
+      $kysely = getDrinks(); 
       require_once 'views/header.php';
       require_once 'views/drinks.php'; 
       require_once 'libs/listing.php'; 

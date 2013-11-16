@@ -1,4 +1,5 @@
-<?php $kysely = "SELECT description, price FROM materials"; 
+<?php require_once 'libs/listqueries.php';
+      $kysely = getMaterials(); 
       require_once 'views/header.php';
       require_once 'views/materials.php'; 
       require_once 'libs/listing.php'; 

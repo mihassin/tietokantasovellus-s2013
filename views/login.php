@@ -3,7 +3,7 @@
 	<div>
 	<form method="post" action="checklogin.php">
 		<label>Käyttäjätunnus</label></br>
-		<input type="text" name="user" id="user" /></br>
+		<input type="text" name="email" id="email" /></br>
 		<label>Salasana</label></br>
 		<input type="password" name="password" id="password" /></br></br>
 		<input type="submit" name="kj-nappi" id="kj-nappi" value="Kirjaudu sisään" />

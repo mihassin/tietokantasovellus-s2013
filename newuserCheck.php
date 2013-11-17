@@ -5,13 +5,15 @@ $emailLegit = TRUE;
 $phoneLegit = TRUE;
 $pwLongEnuf = TRUE;
 
+require_once 'libs/checkEmail.php';
+
 if(strlen($_POST['email'] < 5) {
 	$registerOkay = FALSE;
 	$emailLegit = FALSE;
-} 
+}
+ 
 else
 {
-	require_once 'libs/checkEmail.php';
 	if(emailExists($_POST['email'])) {
 		$registerOkay = FALSE;
 		$emailLegit = FALSE;
@@ -38,6 +40,8 @@ if($registerOkay == FALSE)
 }
 else
 {
+addAccount($_POST['first'],$_POST['second'],$_POST['email'],$_POST['phone'],$_POST['password']);
+echo "Käyttäjätunnus luotu</br>Voit kirjautua sisään antamallasi sähköpostiosoitteella!";
 }
 require_once 'views/footer.php';?>
 

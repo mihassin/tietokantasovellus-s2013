@@ -1,7 +1,7 @@
 <?php require_once 'header.php'; ?>
 	<h1>Luo käyttäjätunnus</h1>
 	<div>
-	<form method="post">
+	<form method="post" action="newuserCheck.php">
 		<label>Sähköposti</label></br>
 		<input type="email" name="email" id="email" /></br>
 		<label>Salasana</label></br>

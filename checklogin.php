@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'libs/db_connect.php';
 
 $yhteys = getConnection();
@@ -13,6 +14,13 @@ if($res != 1) {
  require_once 'views/failure.php';
 }
 else {
+$kayttaja = pg_fetch_row($query);
+$id = $kayttaja[0];
+$rooli = $kayttaja[1];
+
+$_SESSION['userId'] = $id;
+$_SESSION['userRole'] = $rooli;
+
 header('Location: http://mihassin.users.cs.helsinki.fi');
 exit;
 }

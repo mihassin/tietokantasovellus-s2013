@@ -13,4 +13,9 @@
 		$querystr = "SELECT description, price FROM materials";
 		return $querystr;
 	}
+
+        function getUsers() {
+		$querystr = "SELECT email, first, second, phone FROM users";
+		return $querystr;
+	}
 ?>

@@ -8,7 +8,7 @@ require_once 'views/employee-header.php';
 if($_SESSION['userRole'] == 4)
 require_once 'views/admin-header.php';
 
-else {
+if(empty($_SESSION['userRole'])) {
 echo "<!DOCTYPE html><html>
 <head>
 <title>Pizzapalvelu</title></head>

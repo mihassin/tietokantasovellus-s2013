@@ -1,7 +1,7 @@
 <?php session_start();
-if($_SESSION['userRole'] == 1)
+if(!empty($_SESSION['userId']))
 require_once 'views/customer-header.php';
-else 
+else
 require_once 'views/header.php';
 require_once 'views/etusivu.php';
 require_once 'views/footer.php'; ?>

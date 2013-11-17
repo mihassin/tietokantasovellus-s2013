@@ -10,9 +10,10 @@ $query = pg_query($yhteys, $kysely);
 $res = pg_num_rows($query);
 
 if($res != 1) {
- echo "jes";
+ require_once 'views/failure.php';
 }
 else {
-echo "buu";
+header('Location: http://mihassin.users.cs.helsinki.fi');
+exit;
 }
 ?>

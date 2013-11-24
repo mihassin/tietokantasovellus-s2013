@@ -7,7 +7,11 @@ function getDropList() {
  $rows = pg_num_rows($kysely);
 
  $res = pg_fetch_all($kysely);
-
+ 
  for($i = 0; $i<$rows ; $i++) {
+  $tmp = $res[$i];
+  $name = $tmp['name'];
+  $str = "<option value='{$name}'>{$name}</option>";
+  echo $str;
  }
 }?>

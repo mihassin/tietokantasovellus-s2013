@@ -6,5 +6,5 @@ echo "<!DOCTYPE html><html>
 <a href='index.php'>Etusivu</a>
 <a href='makeorder.php'>Tee tilaus</a>
 <a href='logout.php'>Kirjaudu ulos</a>
-</nav></br>";
+</nav>";
 ?>

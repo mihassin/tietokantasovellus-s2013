@@ -8,7 +8,37 @@ if(isset($_SESSION['userId'])) {
 require_once 'libs/db_connect.php';
 $yhteys = getConnection();
 
-$newUserOkay = FALSE;
+$newUserOkay = TRUE;
+$firstOkay = TRUE;
+$secondOkay = TRUE;
+$emailOkay = TRUE;
+$phoneOkay = TRUE;
+$pwOkay = TRUE;
+
+if((strlen($_POST['email']) < 5) || (strpos($_POST['email'], '@') !== FALSE) || (strpos($_POST['email'], '.') !== FALSE)) {
+ $newUserOkay = FALSE;
+ $emailOkay = FALSE; 
+}
+
+if(strlen($_POST['phone']) < 3) {
+ $newUserOkay = FALSE;
+ $phoneOkay = FALSE; 
+}
+
+if(strlen($_POST['first']) < 2) {
+ $newUserOkay = FALSE;
+ $firstOkay = FALSE; 
+}
+
+if(strlen($_POST['second']) < 2) {
+ $newUserOkay = FALSE;
+ $secondOkay = FALSE; 
+}
+
+if(strlen($_POST['password']) < 6) {
+ $newUserOkay = FALSE;
+ $pwOkay = FALSE; 
+}
 
 require_once 'views/header.php';
 
@@ -25,14 +55,11 @@ else {
  $pw = pg_escape_string($_POST['password']);
 
  $kysely = "INSERT INTO users VALUES ({$id}, 1, '{$first}', '{$second}', '{$email}', '{$phone}', md5('{$pw}'), substring(md5(random()::TEXT) from 1 for 8));";
- echo $kysely;
-
  $lisaa = pg_query($yhteys, $kysely);
 
  $kysely = "UPDATE users SET pw_hash=md5('{$pw}' || users.pw_salt) WHERE id={$id};";
- echo $kysely;
-
  $lisaa = pg_query($yhteys, $kysely);
+
 echo '<h1>Tunnus lisätty!</h1>
 <li><a href="index.php">Palaa etusivulle</a></li>';
 }

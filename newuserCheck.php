@@ -15,9 +15,20 @@ $emailOkay = TRUE;
 $phoneOkay = TRUE;
 $pwOkay = TRUE;
 
-if((strlen($_POST['email']) < 5) || (strpos($_POST['email'], '@') !== FALSE) || (strpos($_POST['email'], '.') !== FALSE)) {
+if((strlen($_POST['email']) < 5)) {
  $newUserOkay = FALSE;
  $emailOkay = FALSE; 
+}
+
+if(strlen($_POST['email']) >= 5) {
+ $escapedEmail = pg_escape_string($yhteys, $_POST['email']);
+ $query = "SELECT id FROM users where email='{$escapedEmail}'";
+ $result = pg_query($yhteys, $query);
+
+        if(pg_num_rows($result) > 0) {
+            $register_data_okay = FALSE;
+            $email_okay = FALSE;
+        }
 }
 
 if(strlen($_POST['phone']) < 3) {

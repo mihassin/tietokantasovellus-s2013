@@ -4,7 +4,7 @@
  <select name="productlist" form="offerform">
   getDropList();
  </select>
- <form action="add-offerCheck.php" id="offerform">
+ <form method="post" action="add-offerCheck.php" id="offerform">
   </br>
   <label>Tarjous hinta</label></br>
   <input type="text" name="price" /></br>

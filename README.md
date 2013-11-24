@@ -1,23 +1,12 @@
 tietokantasovellus-s2013
 ========================
-viikko 3:
+viikko 4:
 =========
-1. Korjattu viime viikon html-demo oikeudet palvelimelta,
+1. Tunnuksen luonti, tunnuksen tietojen tarkistus, emailit eivät voi toistua
 
-2. kirjautuminen
- a. kirjautuminen sisään
- b. kirjautuminen ulos
- c. käyttäjän roolilla vaikutus kirjautumisessa,
+2. Dokumentaation uudet kappaleet
 
-3. etusivu uudistettu,
-
-4. tietokannassa muutoksia: usersilla kaksi uutta saraketta pw_salt ja pw_hash
-
-5. tietokanta yhteys funktio
-
-6. tunnuksen luonti(keskeneräinen)
-
-7. ruoka-, juoma-, lisuke- ja käyttäjälistat
+3. checkEmail.php tarkistaa vain sähköpostin
 
 Pizzapalvelu toimii:
 mihassin.users.cs.helsinki.fi

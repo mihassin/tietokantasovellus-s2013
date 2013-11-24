@@ -21,10 +21,8 @@ if((strlen($_POST['email']) < 5)) {
 }
 
 else {
- $escapedEmail = pg_escape_string($yhteys, $_POST['email']);
- $query = "SELECT id FROM users where email='{$escapedEmail}'";
- $result = pg_query($yhteys, $query);
-        if(pg_num_rows($result) > 0) {
+ require_once 'libs/checkEmail.php';
+        if(emailExists($_POST['email']) > 0) {
             $newUserOkay = FALSE;
             $emailOkay = FALSE;
         }

@@ -32,10 +32,10 @@ insert into users values
 UPDATE users SET pw_hash=md5('pw1' || users.pw_salt) WHERE id=1;
 UPDATE users SET pw_hash=md5('pw2' || users.pw_salt) WHERE id=2;
 UPDATE users SET pw_hash=md5('pw3' || users.pw_salt) WHERE id=3;
-UPDATE users SET pw_hash=md5('pw4' || users.pw_salt) WHERE id=4;
-UPDATE users SET pw_hash=md5('pw5' || users.pw_salt) WHERE id=5;
-UPDATE users SET pw_hash=md5('pw6' || users.pw_salt) WHERE id=6;
-UPDATE users SET pw_hash=md5('pw6' || users.pw_salt) WHERE id=7;
+UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=4;
+UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=5;
+UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=6;
+UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=7;
 
 insert into orders values
   (1, 5, 'us and a', '2013-11-10', 1337.00),

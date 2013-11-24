@@ -1,4 +1,9 @@
-<?php require_once 'header.php'; ?>
+<?php session_start();
+
+if(isset($_SESSION['userId'])) {
+        header('Location: http://mihassin.users.cs.helsinki.fi');
+}
+require_once 'header.php'; ?>
 	<h1>Luo käyttäjätunnus</h1>
 	<div>
 	<form method="post" action="newuserCheck.php">

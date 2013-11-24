@@ -3,10 +3,7 @@
       require_once 'views/header.php';
       require_once 'views/menu.php'; 
       require_once 'libs/listing.php'; 
-      getList($kysely); ?>
-<form action='add-offer.php'>
- <input type="submit" value="Lisää tarjous" />
-</form>
-<?php      
+      getList($kysely);
+      require_once 'views/add-offerButton.php';
       require_once 'views/footer.php'; 
 ?>

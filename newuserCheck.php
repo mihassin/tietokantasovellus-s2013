@@ -53,6 +53,13 @@ if(strlen($_POST['password']) < 6) {
 require_once 'views/header.php';
 
 if(!$newUserOkay) {
+
+ if(!$firstOkay) echo "Antamasi etunimi on virheellinen!</br>";
+ if(!$secondOkay) echo "Antamasi sukunimi on virheellinen!</br>";
+ if(!$emailOkay) echo "Antamasi sähköpostiosoite on virheellinen tai varattu!</br>";
+ if(!$phoneOkay) echo "Antamasi puhelinnumero on virheellinen!</br>";
+ if(!$pwOkay) echo "Antamasi salasana on liian lyhyt! Salasanan pitää olla vähintään kuusi merkkiä pitkä.</br>";
+ 
  require_once 'views/newuserAgain.php';
 }
 

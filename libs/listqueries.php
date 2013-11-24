@@ -18,4 +18,9 @@
 		$querystr = "SELECT email, first, second, phone FROM users";
 		return $querystr;
 	}
+
+        function getOrders() {
+		$querystr = "SELECT id, address, deliver_time, total_price FROM orders";
+		return $querystr;
+	}
 ?>

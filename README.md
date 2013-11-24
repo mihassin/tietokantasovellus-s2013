@@ -8,6 +8,12 @@ viikko 4:
 
 3. checkEmail.php tarkistaa vain sähköpostin
 
+4. tilauslista
+
+5. menussa nappi tarjouksen lisäykseen, näkyvyys rajoitus
+
+6. tarjouksen lisäys/hinnan muokkaus
+
 Pizzapalvelu toimii:
 mihassin.users.cs.helsinki.fi
 

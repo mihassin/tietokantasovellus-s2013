@@ -58,7 +58,7 @@ if(!$newUserOkay) {
  if(!$secondOkay) echo "Antamasi sukunimi on virheellinen!</br>";
  if(!$emailOkay) echo "Antamasi sähköpostiosoite on virheellinen tai varattu!</br>";
  if(!$phoneOkay) echo "Antamasi puhelinnumero on virheellinen!</br>";
- if(!$pwOkay) echo "Antamasi salasana on liian lyhyt! Salasanan pitää olla vähintään kuusi merkkiä pitkä.</br>";
+ if(!$pwOkay) echo "Antamasi salasana on liian lyhyt! Salasanan pitää olla vähintään kuusi merkkiä pitkä.</br></br>";
  
  require_once 'views/newuserAgain.php';
 }

@@ -2,7 +2,7 @@
 <h1>Lisää tarjous</h1>
  <label>Valitse tuote</label></br>
  <select name="productlist" form="offerform">
-  getDropList($kysely);
+  <?php getDropList($kysely); ?>
  </select>
  <form method="post" action="add-offerCheck.php" id="offerform">
   </br>

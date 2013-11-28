@@ -12,6 +12,6 @@
   <input type="text" name="description" /></br>
   <label>Hinta</label></br>
   <input type="text" name="price" /></br>
-  <input type="submit" value="Lisää tarjous" />
+  <input type="submit" value="Lisää tuote" />
  </form>
 <?php require_once 'footer.php' ?>

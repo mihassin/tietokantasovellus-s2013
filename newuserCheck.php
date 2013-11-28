@@ -62,6 +62,7 @@ if(!$newUserOkay) {
 }
 
 else {
+ $id = 1 + pg_num_rows(pg_query($yhteys,"SELECT id FROM users;"));
  $first = pg_escape_string($_POST['first']);
  $second = pg_escape_string($_POST['second']);
  $email = pg_escape_string($_POST['email']);

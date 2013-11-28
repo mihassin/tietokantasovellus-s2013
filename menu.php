@@ -5,6 +5,7 @@
       require_once 'libs/listing.php'; 
       getList($kysely);
       $kysely = "SELECT name FROM products WHERE product_type_id='1'";
+      require_once 'libs/dropList.php';
       require_once 'views/add-offerButton.php';
       require_once 'views/footer.php'; 
 ?>

@@ -62,14 +62,13 @@ if(!$newUserOkay) {
 }
 
 else {
- $id = 1 + pg_num_rows(pg_query($yhteys, "SELECT id FROM users"));
  $first = pg_escape_string($_POST['first']);
  $second = pg_escape_string($_POST['second']);
  $email = pg_escape_string($_POST['email']);
  $phone = pg_escape_string($_POST['phone']);
  $pw = pg_escape_string($_POST['password']);
 
- $kysely = "INSERT INTO users VALUES ({$id}, 1, '{$first}', '{$second}', '{$email}', '{$phone}', md5('{$pw}'), substring(md5(random()::TEXT) from 1 for 8));";
+ $kysely = "INSERT INTO users VALUES (DEFAULT, 1, '{$first}', '{$second}', '{$email}', '{$phone}', md5('{$pw}'), substring(md5(random()::TEXT) from 1 for 8));";
  $lisaa = pg_query($yhteys, $kysely);
 
  $kysely = "UPDATE users SET pw_hash=md5('{$pw}' || users.pw_salt) WHERE id={$id};";

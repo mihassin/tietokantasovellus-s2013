@@ -8,16 +8,14 @@ $yhteys = getConnection();
 
 $str = pg_escape_string($yhteys, $_POST['product-type-list']);
 $query = pg_query($yhteys, "SELECT id FROM product_types WHERE description='{$str}';");
-$type = pg_fetch_result($query, 1, 0);
-echo $type;
+$type = pg_fetch_result($query, 0, 0);
 
-$id = 1 + pg_num_rows(pg_query($yhteys, "SELECT id FROM users"));
 $name = pg_escape_string($yhteys, $_POST['name']);
 $description = pg_escape_string($yhteys, $_POST['description']);
 $price = pg_escape_string($yhteys, $_POST['price']); 
 
-$kysely = "INSERT INTO products values ({$id}, {$type}, '{$name}','{$description}', {$price});";
-echo $kysely;
+$kysely = "INSERT INTO products values (DEFAULT, {$type}, '{$name}','{$description}', {$price});";
 
 pg_query($kysely);
+header('Location: http://mihassin.users.cs.helsinki.fi/');
 ?>

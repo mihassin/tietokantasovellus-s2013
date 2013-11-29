@@ -1,7 +1,6 @@
 <?php
 if( ($_SESSION['userRole'] == 4) ) {
 echo "<select name='productlist' form='removeform'>";
-  $kysely = "SELECT name FROM products WHERE product_type_id='1'";
   require_once 'libs/dropList.php';
   getDropList($kysely);
 echo "</select>

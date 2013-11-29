@@ -14,7 +14,7 @@ $name = pg_escape_string($yhteys, $_POST['name']); //lisukkeiden description ja 
 $description = pg_escape_string($yhteys, $_POST['description']); //vain tuotteilla
 $price = pg_escape_string($yhteys, $_POST['price']); 
 
-if($type==3)
+if($_SESSION['pid']==3)
  $kysely = "INSERT INTO materials values (DEFAULT, {$type}, '{$name}', {$price});";
 else
  $kysely = "INSERT INTO products values (DEFAULT, {$type}, '{$name}','{$description}', {$price});";

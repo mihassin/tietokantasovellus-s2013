@@ -1,18 +1,16 @@
 tietokantasovellus-s2013
 ========================
-viikko 4:
+viikko 5:
 =========
-1. Tunnuksen luonti, tunnuksen tietojen tarkistus, emailit eivät voi toistua
+1. user-roolin navigointi muunnoksia
 
-2. Dokumentaation uudet kappaleet
+2. admin-rooli voi lisätä ja poistaa tuotteita, juomia ja lisukkeita
 
-3. checkEmail.php tarkistaa vain sähköpostin
+3. admin-, delivery- ja employee-roolit voivat muokata tuotteiden, juomien ja lisukkeiden hintoja
 
-4. tilauslista
+4. yllämainitut toiminnot eivät näy user-rooleille tai kirjautumattomille
 
-5. menussa nappi tarjouksen lisäykseen, näkyvyys rajoitus
-
-6. tarjouksen lisäys/hinnan muokkaus
+5. Dokumentaation uudet kappaleet
 
 Pizzapalvelu toimii:
 mihassin.users.cs.helsinki.fi

@@ -9,7 +9,10 @@ $yhteys = getConnection();
 $name = pg_escape_string($yhteys, $_POST['productlist']);
 $price = pg_escape_string($yhteys, $_POST['price']);
 
-$kysely = "UPDATE products SET price='{$price}' WHERE name='{$name}';";
+if($_SESSION['pid'] == 3) 
+ $kysely = "UPDATE materials SET price='{$price}' WHERE description='{$name}';";
+else
+ $kysely = "UPDATE products SET price='{$price}' WHERE name='{$name}';";
 
 pg_query($kysely);
 header('Location: http://mihassin.users.cs.helsinki.fi/');

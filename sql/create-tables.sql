@@ -51,8 +51,9 @@ CREATE TABLE content_map (
 
 CREATE TABLE cart_map (
   id serial PRIMARY KEY,
-  order_id int REFERENCES orders(id) ON DELETE CASCADE,
+  user_id int REFERENCES users(id) ON DELETE CASCADE,
   product_id int REFERENCES products(id) ON DELETE CASCADE,
   amount int NOT NULL,
+  ordered boolean NOT NULL,
   UNIQUE(order_id, product_id)
 );

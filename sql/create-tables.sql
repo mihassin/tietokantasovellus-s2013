@@ -55,5 +55,5 @@ CREATE TABLE cart_map (
   product_id int REFERENCES products(id) ON DELETE CASCADE,
   amount int NOT NULL,
   ordered boolean NOT NULL,
-  UNIQUE(order_id, product_id)
+  UNIQUE(user_id, product_id)
 );

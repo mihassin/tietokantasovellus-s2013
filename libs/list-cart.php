@@ -13,11 +13,11 @@ function getCartList($kysely) {
 		echo "<ol>";
 		for($i = 0; $i < $rows; $i++) {
 			$tmp = $res[$i];
-  			$name = $tmp['tuote'];
+  			$name = $tmp['name'];
 			$kpl = $tmp['kpl'];
 			$price = $tmp['price'];
                 	$price = $kpl * $price;
-			echo "<li>{$tuote} {$kpl} kappaletta. Hinta: {$price}</li>";
+			echo "<li>{$name} {$kpl} kappaletta. Hinta: {$price}</li>";
 		}
 		echo "</ol>";
 		return 0;

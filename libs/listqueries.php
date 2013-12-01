@@ -25,7 +25,7 @@
 	}
 
         function getCartByUid($uid) {
-        	$querystr = "SELECT products.name as tuote, cart_map.amount as kpl, products.price as price FROM products, cart_map WHERE products.id = cart_map.product_id AND cart_map.ordered = FALSE AND cart_map.user_id = {$uid};";
+        	$querystr = "SELECT products.name as name, cart_map.amount as kpl, products.price as price FROM products, cart_map WHERE products.id = cart_map.product_id AND cart_map.ordered = FALSE AND cart_map.user_id = {$uid};";
         	return $querystr;
         }
 ?>

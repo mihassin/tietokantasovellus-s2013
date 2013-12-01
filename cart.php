@@ -9,5 +9,5 @@
       $kysely = getCartByUid($uid);
       $empty = getCartList($kysely);
       require_once 'views/cartbuttons.php';
-      getButtons($empty);
+      getButtons($empty, getMenu(), getDrinks(), $kysely);
       require_once 'views/footer.php'; ?>

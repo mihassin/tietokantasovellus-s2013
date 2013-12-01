@@ -7,6 +7,7 @@
       require_once 'libs/list-cart.php';
       $uid = $_SESSION['userId'];
       $kysely = getCartByUid($uid);
-      getCartList($kysely);
-      require_once 'views/cartbuttons.php';
+      $empty = getCartList($kysely);
+      if(!$empty)
+       require_once 'views/cartbuttons.php';
       require_once 'views/footer.php'; ?>

@@ -7,6 +7,8 @@ function getButtons($empty, $addItem, $addDrink, $removeItem) {
  echo "</select>
  <form method='post' action='add-item-cartCheck.php' id='additemform'>
  </br>
+ <label>Määrä: </label>
+ <input type='text' value='amount' /></br>
  <input type='submit' value='Lisää tuote' />
  </form></br>";
 
@@ -16,6 +18,8 @@ function getButtons($empty, $addItem, $addDrink, $removeItem) {
  echo "</select>
  <form method='post' action='add-drink-cartCheck.php' id='adddrinkform'>
  </br>
+ <label>Määrä: </label>
+ <input type='text' value='amount' /></br>
  <input type='submit' value='Lisää juoma' />
  </form></br>";
  

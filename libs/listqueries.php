@@ -10,7 +10,7 @@
 	}
 
 	function getMaterials() {
-		$querystr = "SELECT description, price FROM materials";
+		$querystr = "SELECT description as name, price FROM materials";
 		return $querystr;
 	}
 

@@ -8,6 +8,6 @@
       $uid = $_SESSION['userId'];
       $kysely = getCartByUid($uid);
       $empty = getCartList($kysely);
-      if(!$empty)
-       require_once 'views/cartbuttons.php';
+      require_once 'views/cartbuttons.php';
+      getButtons($empty);
       require_once 'views/footer.php'; ?>

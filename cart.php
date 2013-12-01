@@ -3,11 +3,9 @@
        header('Location: http://mihassin.users.cs.helsinki.fi'); 
       require_once 'views/header.php';
       echo "<h1>Ostoskori</h1>";
-      require_once 'libs/list-cart.php';
-      $uid = $_SESSION['userId'];
-      $kysely = "SELECT products.name as tuote, cart_map.amount as kpl, products.price as price" 
-      $kysely .= " FROM products, cart_map" 
-      $kysely .= " WHERE products.id = cart_map.product_id AND cart_map.ordered = FALSE AND cart_map.user_id = '{$uid}';";
+      require_once 'libs/listqueries';
+      //require_once 'libs/list-cart.php';
+      $kysely = getCartByUid($_SESSION['userId']);
       echo $kysely;
       //getCartList($kysely);
       require_once 'views/cartbuttons.php';

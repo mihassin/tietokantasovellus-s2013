@@ -10,7 +10,13 @@ viikko 5:
 
 4. yllämainitut toiminnot eivät näy user-rooleille tai kirjautumattomille
 
-5. Dokumentaation uudet kappaleet
+5. Ostoskorin lisäys, listaus ja poisto
+
+6. Ostoskorin sisältö on käyttäjäkohtainen
+
+7. Tietokannassa muutoksia cart_map tietokohteessa 
+
+8. Dokumentaation uudet kappaleet ja päivitys
 
 Pizzapalvelu toimii:
 mihassin.users.cs.helsinki.fi

@@ -19,7 +19,7 @@ $query = pg_query($yhteys, "SELECT id FROM product_types WHERE description='{$st
 $type = pg_fetch_result($query, 0, 0);
 
 $name = pg_escape_string($yhteys, $_POST['name']); //lisukkeiden description ja tuotteiden name
-$name = ucfirst($name);
+$name = ucfirst(strtolower($name));
 
 $description = pg_escape_string($yhteys, $_POST['description']); //vain tuotteilla 
 

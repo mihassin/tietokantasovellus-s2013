@@ -3,6 +3,7 @@ session_start();
 
 if(isset($_SESSION['userId'])) {
         header('Location: http://mihassin.users.cs.helsinki.fi');
+        exit();
 }
 
 require_once 'libs/db_connect.php';

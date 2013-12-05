@@ -1,15 +1,12 @@
 <?php
-if(!is_numeric($_POST['price'])) {
- header('Location: http://mihassin.users.cs.helsinki.fi/add-item.php');
- exit();
-}
-
 require_once 'libs/checkAccess.php';
 require_once 'libs/db_connect.php';
 $yhteys = getConnection();
 
 $price = pg_escape_string($yhteys, $_POST['price']);
-if(price <= 0) {
+$price = str_replace(",", ".", $price);
+
+if((price <= 0) && (!is_numeric($price)) ) {
  header('Location: http://mihassin.users.cs.helsinki.fi/add-item.php');
  exit(); 
 }

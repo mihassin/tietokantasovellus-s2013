@@ -16,14 +16,16 @@ $query = pg_query($yhteys, "SELECT id FROM product_types WHERE description='{$st
 $type = pg_fetch_result($query, 0, 0);
 
 $name = pg_escape_string($yhteys, $_POST['name']); //lisukkeiden description ja tuotteiden name
-$name = ucfirst(strtolower($name));
 
 $description = pg_escape_string($yhteys, $_POST['description']); //vain tuotteilla 
 
-if($_SESSION['pid']==3)
+if($_SESSION['pid']==3) {
+ $name = strtolower($name); //lisukkeet pienellä
  $kysely = "INSERT INTO materials values (DEFAULT, {$type}, '{$name}', {$price});";
-else
+}else {
+ $name = ucfirst(strtolower($name));//tuotteet suurella
  $kysely = "INSERT INTO products values (DEFAULT, {$type}, '{$name}','{$description}', {$price});";
+}
 
 pg_query($kysely);
 header('Location: http://mihassin.users.cs.helsinki.fi/');

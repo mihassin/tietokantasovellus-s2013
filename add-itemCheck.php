@@ -1,6 +1,6 @@
 <?php
 if(!is_numeric($_POST['price'])) {
- header('Location: http://mihassin.users.cs.helsinki.fi/add-offer.php');
+ header('Location: http://mihassin.users.cs.helsinki.fi/add-item.php');
  exit();
 }
 
@@ -10,7 +10,7 @@ $yhteys = getConnection();
 
 $price = pg_escape_string($yhteys, $_POST['price']);
 if(price <= 0) {
- header('Location: http://mihassin.users.cs.helsinki.fi/add-offer.php');
+ header('Location: http://mihassin.users.cs.helsinki.fi/add-item.php');
  exit(); 
 }
 

@@ -4,6 +4,7 @@
        exit();
       }
       
-      $tot_price = 1;
+      require_once 'libs/cart-total.php';
+      $tot_price = getTotal($_SESSION['userId']);
       require_once 'views/order.php';
 ?>

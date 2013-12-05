@@ -28,7 +28,7 @@ else {
         }
 }
 
-if(strlen($_POST['phone']) < 3) {
+if( (strlen($_POST['phone']) < 3) || (!is_numeric($_POST['phone']))) {
  $newUserOkay = FALSE;
  $phoneOkay = FALSE; 
 }

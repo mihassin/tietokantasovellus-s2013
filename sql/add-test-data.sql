@@ -4,10 +4,9 @@ insert into product_types values
   (3, 'lisuke');
 
 insert into products values
-  (1, 1, 'salami', 'super', 6.00),
-  (2, 1, 'kinkku', 'tarjous', 4.50),
-  (3, 2, 'coca-cola', 'perus', 1337.00);
-
+  (1, 1, 'Salami', '', 7.50),
+  (2, 1, 'Kinkku', '', 7.50),
+  (3, 2, 'Coca-cola', '', 1337.00);
 
 insert into materials values
   (1, 3, 'kinkku', 2.50),

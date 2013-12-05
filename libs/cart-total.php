@@ -8,7 +8,7 @@ function getTotal($uid) {
  $res = pg_query(getConnection(), $kysely);
  $rows = pg_num_rows($res);
 
- for($i = 0; $i<$rows; $i++;) {
+ for($i = 0; $i<$rows; $i++) {
   $tmp = $res[$i];
   $total = $total + $tmp['price'];
  }

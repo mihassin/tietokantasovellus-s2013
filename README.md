@@ -1,22 +1,20 @@
 tietokantasovellus-s2013
 ========================
-viikko 5:
+viikko 6:
 =========
-1. user-roolin navigointi muunnoksia
+1. Ostoskori ei hyväksy negatiivisia tai 0 tuotemääriä
 
-2. admin-rooli voi lisätä ja poistaa tuotteita, juomia ja lisukkeita
+2. Ostoskorin hinta tulee nyt cart_mapista, jonne lasketaan lopullinen hinta, kpl ja lisukkeet vaikuttavat
 
-3. admin-, delivery- ja employee-roolit voivat muokata tuotteiden, juomien ja lisukkeiden hintoja
+3. Uuden tunnuksen luonnissa ei voida käyttää merkkijonoa puhelinnumerona
 
-4. yllämainitut toiminnot eivät näy user-rooleille tai kirjautumattomille
+4. Tuotetta lisättäessä listalle, ei voida antaa 0 tai negatiivasta price arvoa
 
-5. Ostoskorin lisäys, listaus ja poisto
+5. Ostoskorin sisällön ilmoituksessa muutoksia 
+ 
+6. Tietokannassa muutoksia cart_map tietokohteessa 
 
-6. Ostoskorin sisältö on käyttäjäkohtainen
-
-7. Tietokannassa muutoksia cart_map tietokohteessa 
-
-8. Dokumentaation uudet kappaleet ja päivitys
+7. Dokumentaation uudet kappaleet ja päivitys
 
 Pizzapalvelu toimii:
 mihassin.users.cs.helsinki.fi

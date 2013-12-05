@@ -19,7 +19,7 @@ $name = pg_escape_string($yhteys, $_POST['name']); //lisukkeiden description ja 
 
 $description = pg_escape_string($yhteys, $_POST['description']); //vain tuotteilla 
 
-if($_SESSION['pid']==3) {
+if($type == 3) {
  $name = strtolower($name); //lisukkeet pienellä
  $kysely = "INSERT INTO materials values (DEFAULT, {$type}, '{$name}', {$price});";
 }else {

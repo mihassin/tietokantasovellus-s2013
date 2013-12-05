@@ -6,7 +6,6 @@
   <label>Toimitus aika</label></br>
   <input type='text' name='deliver' /></br></br>
   Tilauksen yhteishinta on <?php echo $tot_price . " yksikköä.</br></br>"; ?>
-  <input type='hidden' name='price' value='<?php $tot_price; ?>' />
   <input type='submit' value='Lähetä tilaus' />
  </form>
 <?php require_once 'footer.php' ?>

@@ -8,4 +8,6 @@
       $sql = "DELETE FROM cart_map WHERE user_id='{$uid}' AND product_id='{$pid}';";
 
       pg_query($yhteys, $sql);
-      header('Location: http://mihassin.users.cs.helsinki.fi/cart.php');?>
+      header('Location: http://mihassin.users.cs.helsinki.fi/cart.php');
+      exit();
+?>

@@ -31,7 +31,7 @@ CREATE TABLE orders (
   id serial PRIMARY KEY,
   user_id int REFERENCES users(id) ON DELETE CASCADE,
   address varchar(255) NOT NULL,
-  deliver_time date NOT NULL,
+  deliver_time timestamp NOT NULL,
   total_price real
 );
 

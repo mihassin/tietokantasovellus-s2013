@@ -36,8 +36,3 @@ UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=4;
 UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=5;
 UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=6;
 UPDATE users SET pw_hash=md5('test' || users.pw_salt) WHERE id=7;
-
-insert into orders values
-  (1, 5, 'us and a', '2013-11-10', 1337.00),
-  (2, 6, 'mt. olympos greece', '2013-11-10', 5.00),
-  (3, 4, 'heaven', '2013-11-10', 6.00);

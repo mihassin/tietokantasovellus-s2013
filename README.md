@@ -14,6 +14,8 @@ viikko 6:
  
 6. Tietokannassa muutoksia cart_map tietokohteessa 
 
+7. Tietokannassa muutoksia orders tietokohteessa
+
 7. Dokumentaation uudet kappaleet ja päivitys
 
 Pizzapalvelu toimii:

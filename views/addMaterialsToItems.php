@@ -28,5 +28,6 @@
  </select></br></br>
  <form method='post' action='check-mats.php' id='matsform'>
   <input type='submit' value='Lisää lisukkeet' />
+  <input type='submit' value='Palaa ostoskoriin' formaction='cart.php' />
  </form>
 <?php require_once 'footer.php' ?>

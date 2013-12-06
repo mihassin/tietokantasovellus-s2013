@@ -3,26 +3,26 @@
  <p>Jokaiseen pizza tuotteeseen voi halutessaan lisätä korkeintaan 4 lisuketta.</p>
  <p>Jokaisen lisätyn lisukkeen hinta lasketaan tuotteen lopulliseen hintaan.</p>
  <p>Tuote</p></br>
- <select>
+ <select name='productlist' form='matsform' >
   <?php getDropList(getCartItemsByUid($uid)); ?>
  </select>
  <p>Lisuke 1:</p></br>
- <select>
+ <select name='mat1' form='matsform'>
   <option />
   <?php getDropList(getMaterials()); ?>
  </select>
  <p>Lisuke 2:</p></br>
- <select>
+ <select name='mat2' form='matsform'>
   <option />
   <?php getDropList(getMaterials()); ?>
  </select>
  <p>Lisuke 3:</p></br>
- <select>
+ <select name='mat3' form='matsform'>
   <option />
   <?php getDropList(getMaterials()); ?>
  </select>
  <p>Lisuke 4:</p></br>
- <select>
+ <select name='mat4' form='matsform'>
   <option />
   <?php getDropList(getMaterials()); ?>
  </select></br></br>

@@ -1,6 +1,8 @@
 <?php session_start();
-      if(!isset($_SESSION['userId']))
+      if(!isset($_SESSION['userId'])) {
        header('Location: http://mihassin.users.cs.helsinki.fi'); 
+       exit();
+      }
       require_once 'views/header.php';
       echo "<h1>Ostoskori</h1>";
       require_once 'libs/listqueries.php';

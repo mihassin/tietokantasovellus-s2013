@@ -24,12 +24,18 @@ function getButtons($empty, $addItem, $addDrink, $removeItem) {
  </form></br>";
  
  if(!$empty) {
+  echo "<form action='addMaterialsToItems.php'>
+  <input type='submit' value='Lisää lisukkeita' />
+  </form>";
   echo "<select name='orderlist' form='removeform'>";
   getDropList($removeItem);
   echo "</select>
   <form method='post' action='remove-item-cartCheck.php' id='removeform'>
   </br>
   <input type='submit' value='Poista tuote' />
+  </form>";
+  echo "<form action='removeCart.php'>
+  <input type='submit' value='Tyhjennä ostoskori' />
   </form>";
   echo "<form action='order.php'>
   <input type='submit' value='Tilaa' />

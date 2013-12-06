@@ -26,7 +26,7 @@ function getButtons($empty, $addItem, $addDrink, $removeItem) {
  if(!$empty) {
   echo "<form action='addMaterialsToItems.php'>
   <input type='submit' value='Lisää lisukkeita' />
-  </form>";
+  </form></br>";
   echo "<select name='orderlist' form='removeform'>";
   getDropList($removeItem);
   echo "</select>
@@ -37,7 +37,7 @@ function getButtons($empty, $addItem, $addDrink, $removeItem) {
   echo "<form action='removeCart.php'>
   <input type='submit' value='Tyhjennä ostoskori' />
   </form>";
-  echo "<form action='order.php'>
+  echo "</br><form action='order.php'>
   <input type='submit' value='Tilaa' />
   </form>";
  }

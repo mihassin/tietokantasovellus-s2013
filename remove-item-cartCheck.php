@@ -5,9 +5,10 @@
       $str = pg_escape_string($yhteys, $_POST['orderlist']);
       $query = pg_query($yhteys, "SELECT id FROM products WHERE name='{$str}';");
       $pid = pg_fetch_result($query, 0, 0); //product id
-      $sql = "DELETE FROM cart_map WHERE user_id='{$uid}' AND product_id='{$pid}';";
+      $sql = "DELETE FROM cart_map WHERE user_id='{$uid}' AND product_id='{$pid}' AND ordered=FALSE;";
 
       pg_query($yhteys, $sql);
+      pg_close($yhteys);
       header('Location: http://mihassin.users.cs.helsinki.fi/cart.php');
       exit();
 ?>

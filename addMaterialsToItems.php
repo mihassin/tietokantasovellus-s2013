@@ -4,7 +4,7 @@
        exit();
       }
 
-     require_once 'libs/drop-list.php';
+     require_once 'libs/dropList.php';
      require_once 'libs/listqueries.php';
      $uid = $_SESSION['userId'];
      require_once 'views/addMaterialsToItems.php';

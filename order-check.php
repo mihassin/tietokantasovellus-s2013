@@ -19,7 +19,7 @@ $time = date("Y-m-d H:i:s");
 
 $tot_price = getTotal($_SESSION['userId']);
 
-$kysely = "INSERT INTO orders VALUES (DEFAULT, {$uid}, '{$addr}','{$time}', '', FALSE ,{$tot_price});";
+$kysely = "INSERT INTO orders VALUES (DEFAULT, {$uid}, '{$addr}','{$time}', NULL, FALSE ,{$tot_price});";
 pg_query($yhteys, $kysely);
 
 $kysely = "UPDATE cart_map SET ordered=TRUE WHERE user_id={$uid} AND ordered=FALSE;";

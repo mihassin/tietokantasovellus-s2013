@@ -24,6 +24,7 @@
       }
 
       if(!empty($mat2)) {
+	if(!$none) $mats = $mats . ", ";
         $none = FALSE;
 	$query = pg_query($yhteys, getMatById($mat2));
         $tot = $tot + ($amount * pg_fetch_result($query, 0, 1));
@@ -31,6 +32,7 @@
       }
 
       if(!empty($mat3)) {
+	if(!$none) $mats = $mats . ", ";
         $none = FALSE;
 	$query = pg_query($yhteys, getMatById($mat3));
         $tot = $tot + ($amount * pg_fetch_result($query, 0, 1));
@@ -38,14 +40,16 @@
       }
 
       if(!empty($mat4)) {
-        $none = FALSE;
+	if(!$none) $mats = $mats . ", ";        
+	$none = FALSE;
 	$query = pg_query($yhteys, getMatById($mat4));
         $tot = $tot + ($amount * pg_fetch_result($query, 0, 1));
         $mats = $mats . " " .pg_fetch_result($query, 0 , 0);
       }
 
       if(!$none) {
-       pg_query($yhteys, getMatUpdate($id, $tot, $mats));
+	$mats = $mats . ".";
+       	pg_query($yhteys, getMatUpdate($id, $tot, $mats));
       }
 
       pg_close($yhteys);

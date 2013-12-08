@@ -5,5 +5,6 @@
       echo "<h1>Tilaukset</h1>";
       require_once 'libs/listing.php'; 
       getList($kysely);
+      require_once 'views/orders.php';
       require_once 'views/footer.php'; 
 ?>

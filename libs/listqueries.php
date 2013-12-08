@@ -30,7 +30,7 @@
         }
 
         function getCartItemsByUid($uid) {
-        	$querystr = "SELECT cart_map.id as id, products.name as name, cart_map.amount as kpl, cart_map.price as price FROM products, cart_map WHERE products.id = cart_map.product_id AND cart_map.ordered = FALSE AND cart_map.user_id = {$uid} AND products.product_type_id='1';";
+        	$querystr = "SELECT cart_map.id as id, products.name as name, cart_map.amount as kpl, cart_map.price as price FROM products, cart_map WHERE products.id = cart_map.product_id AND cart_map.ordered = FALSE AND cart_map.user_id = {$uid} AND products.product_type_id='1' AND cart_map.mats = FALSE;";
         	return $querystr;
         }
 
@@ -45,7 +45,7 @@
 	}
 
 	function getMatUpdate($id, $total, $mats) {
-		$querystr = "UPDATE cart_map SET price={$total}, added_mats='{$mats}' WHERE id={$id};";
+		$querystr = "UPDATE cart_map SET price={$total}, added_mats='{$mats}', mats=TRUE WHERE id={$id};";
 		return $querystr;
 	}
 ?>

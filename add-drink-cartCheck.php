@@ -20,7 +20,7 @@ $tot_price = $amount * pg_fetch_result($query, 0, 0);
 
 $uid = $_SESSION['userId']; // user id
 
-$kysely = "INSERT INTO cart_map VALUES (DEFAULT, {$uid}, {$str}, {$amount}, FALSE, '',{$tot_price});"; 
+$kysely = "INSERT INTO cart_map VALUES (DEFAULT, {$uid}, {$str}, {$amount}, FALSE, '', FALSE,{$tot_price});"; 
 
 pg_query($kysely);
 header('Location: http://mihassin.users.cs.helsinki.fi/cart.php');

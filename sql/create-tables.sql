@@ -31,7 +31,8 @@ CREATE TABLE orders (
   id serial PRIMARY KEY,
   user_id int REFERENCES users(id) ON DELETE CASCADE,
   address varchar(255) NOT NULL,
-  deliver_time timestamp NOT NULL,
+  order_time timestamp NOT NULL,
+  delivered boolean NOT NULL,
   total_price real
 );
 
@@ -56,5 +57,6 @@ CREATE TABLE cart_map (
   amount int NOT NULL,
   ordered boolean NOT NULL,
   added_mats varchar(255),
+  mats boolean NOT NULL,
   price real  
 );

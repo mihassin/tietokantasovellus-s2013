@@ -29,7 +29,7 @@ if($type == 3) {
  $kysely = "INSERT INTO products values (DEFAULT, {$type}, '{$name}','{$description}', {$price});";
 }
 
-pg_query($kysely);
+pg_query($yhteys, $kysely);
 header('Location: http://mihassin.users.cs.helsinki.fi/');
 pg_close($yhteys);
 exit();

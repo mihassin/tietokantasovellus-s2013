@@ -7,7 +7,7 @@ $yhteys = getConnection();
 $price = pg_escape_string($yhteys, $_POST['price']);
 $price = str_replace(",", ".", $price);
 
-if((price <= 0) && (!is_numeric($price)) ) {
+if(($price <= 0) || (!is_numeric($price)) ) {
  header('Location: http://mihassin.users.cs.helsinki.fi/add-item.php');
  exit(); 
 }

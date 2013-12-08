@@ -16,7 +16,15 @@ viikko 6:
 
 7. Tietokannassa muutoksia orders tietokohteessa
 
-7. Dokumentaation uudet kappaleet ja päivitys
+8. Content_map poistettu
+
+9. Tilauksen aika poistettu
+
+10. Lisukkeiden lisäys tuotteisiin
+
+11. Toimituksen toiminnot: päivitys ja poisto
+
+12. Dokumentaation uudet kappaleet ja päivitys
 
 Pizzapalvelu toimii:
 mihassin.users.cs.helsinki.fi

@@ -10,6 +10,12 @@ $price = pg_escape_string($yhteys, $_POST['price']);
 $time = date("Y-m-d");
 $time = $time . " " . $t;
 
+$query = pg_query($yhteys, "SELECT order_time, total_price FROM orders WHERE id={$id};");
+$prevprice = pg_fetch_result($query, 0 , 1);
+$prevtime = pg_fetch_result($query, 0 , 0);
+
+
+
 if(!empty($price)) {
  if((!is_numeric($price)) || ($price <= 0) || ($price >= $prevprice)) {
   header('Location: http://mihassin.users.cs.helsinki.fi/deliver.php');

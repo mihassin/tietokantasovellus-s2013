@@ -15,13 +15,12 @@ if($amount <= 0) {
 }
 
 $str = pg_escape_string($yhteys, $_POST['drinklist']);
-$query = pg_query($yhteys, "SELECT id, price FROM products WHERE name='{$str}';");
-$pid = pg_fetch_result($query, 0, 0); //product id
-$tot_price = $amount * pg_fetch_result($query, 0, 1);
+$query = pg_query($yhteys, "SELECT price FROM products WHERE id='{$str}';");
+$tot_price = $amount * pg_fetch_result($query, 0, 0);
 
 $uid = $_SESSION['userId']; // user id
 
-$kysely = "INSERT INTO cart_map VALUES (DEFAULT, {$uid}, {$pid}, {$amount}, FALSE, '',{$tot_price});"; 
+$kysely = "INSERT INTO cart_map VALUES (DEFAULT, {$uid}, {$str}, {$amount}, FALSE, '',{$tot_price});"; 
 
 pg_query($kysely);
 header('Location: http://mihassin.users.cs.helsinki.fi/cart.php');

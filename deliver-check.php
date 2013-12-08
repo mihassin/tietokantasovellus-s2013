@@ -14,7 +14,10 @@ $query = pg_query($yhteys, "SELECT order_time, total_price FROM orders WHERE id=
 $prevprice = pg_fetch_result($query, 0 , 1);
 $prevtime = pg_fetch_result($query, 0 , 0);
 
-
+if(strtotime($time) < strtotime($prevtime)) {
+ header('Location: http://mihassin.users.cs.helsinki.fi/deliver.php');
+ exit();
+}
 
 if(!empty($price)) {
  if((!is_numeric($price)) || ($price <= 0) || ($price >= $prevprice)) {

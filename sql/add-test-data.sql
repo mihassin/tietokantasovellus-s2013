@@ -6,7 +6,7 @@ insert into product_types values
 insert into products values
   (1, 1, 'Salami', '', 7.50),
   (2, 1, 'Kinkku', '', 7.50),
-  (3, 2, 'Coca-cola', '', 1337.00);
+  (3, 2, 'Coca-cola', '', 1.80);
 
 insert into materials values
   (1, 3, 'kinkku', 2.50),

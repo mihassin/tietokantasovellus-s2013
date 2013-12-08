@@ -43,13 +43,6 @@ CREATE TABLE materials (
   price real
 );
 
-CREATE TABLE content_map (
-  id serial PRIMARY KEY,
-  product_id int REFERENCES products(id) ON DELETE CASCADE,
-  material_id int REFERENCES materials(id) ON DELETE CASCADE,
-  UNIQUE(product_id, material_id)
-);
-
 CREATE TABLE cart_map (
   id serial PRIMARY KEY,
   user_id int REFERENCES users(id) ON DELETE CASCADE,

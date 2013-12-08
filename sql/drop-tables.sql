@@ -1,7 +1,5 @@
 DROP TABLE cart_map;
 
-DROP TABLE content_map;
-
 DROP TABLE products;
 
 DROP TABLE materials;

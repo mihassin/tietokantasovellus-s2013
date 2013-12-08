@@ -8,7 +8,7 @@ $uid = $_SESSION['userId'];
 
 $addr = pg_escape_string($yhteys, $_POST['address']);
 $addr = checkData($addr);
-$time = pg_escape_string($yhteys, $_POST['deliver']);
+$time = date("Y-m-d H:i:s");
 
 $tot_price = getTotal($_SESSION['userId']);
 

@@ -2,9 +2,7 @@
  <h1>Tilaus</h1>
  <form method='post' action='order-check.php'>
   <label>Osoite</label> *</br>
-  <input type='text' name='address' /></br>
-  <label>Toimitus aika</label> *</br>
-  <input type='text' name='deliver' /></br></br>
+  <input type='text' name='address' /></br></br>
   Tilauksen yhteishinta on <?php echo $tot_price . " yksikköä.</br></br>"; ?>
   <input type='submit' value='Lähetä tilaus' />
  </form>

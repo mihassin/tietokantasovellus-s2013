@@ -20,7 +20,7 @@
 	}
 
         function getOrders() {
-		$querystr = "SELECT id, user_id, address, order_time, total_price FROM orders WHERE delivered=FALSE;";
+		$querystr = "SELECT id, user_id, address, order_time, total_price FROM orders;";
 		return $querystr;
 	}
 

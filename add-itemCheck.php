@@ -12,9 +12,7 @@ if((price <= 0) && (!is_numeric($price)) ) {
  exit(); 
 }
 
-$str = pg_escape_string($yhteys, $_POST['product-type-list']);
-$query = pg_query($yhteys, "SELECT id FROM product_types WHERE description='{$str}';");
-$type = pg_fetch_result($query, 0, 0);
+$type = pg_escape_string($yhteys, $_POST['product-type-list']);
 
 $name = pg_escape_string($yhteys, $_POST['name']); //lisukkeiden description ja tuotteiden name
 $name = checkData($name);

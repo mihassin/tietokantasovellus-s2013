@@ -14,9 +14,9 @@ if((price <= 0) && (!is_numeric($price)) ) {
 $name = pg_escape_string($yhteys, $_POST['productlist']);
 
 if($_SESSION['pid'] == 3) 
- $kysely = "UPDATE materials SET price='{$price}' WHERE description='{$name}';";
+ $kysely = "UPDATE materials SET price='{$price}' WHERE id='{$name}';";
 else
- $kysely = "UPDATE products SET price='{$price}' WHERE name='{$name}';";
+ $kysely = "UPDATE products SET price='{$price}' WHERE id='{$name}';";
 
 pg_query($kysely);
 header('Location: http://mihassin.users.cs.helsinki.fi/');

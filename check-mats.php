@@ -45,8 +45,7 @@
       }
 
       if(!$none) {
-       $sql = "UPDATE cart_map SET price={$tot}, added_mats='{$mats}' WHERE id={$id};";
-       pg_query($yhteys, $sql);
+       pg_query($yhteys, getMatUpdate($id, $tot, $mats));
       }
 
       pg_close($yhteys);

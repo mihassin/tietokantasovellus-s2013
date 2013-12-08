@@ -35,12 +35,17 @@
         }
 
 	function getMatById($id) {
-		$querystr = "SELECT description, price FROM materials WHERE id={$mat};";
+		$querystr = "SELECT description, price FROM materials WHERE id={$id};";
 		return $querystr;	
 	}
         
 	function getSingleCartRecordById($id) {
 		$querystr = "SELECT amount, price FROM cart_map WHERE id={$id}";
+		return $querystr;
+	}
+
+	function getMatUpdate($id, $total, $mats) {
+		$querystr = "UPDATE cart_map SET price={$total}, added_mats='{$mats}' WHERE id={$id};";
 		return $querystr;
 	}
 ?>

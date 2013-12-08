@@ -32,6 +32,7 @@ CREATE TABLE orders (
   user_id int REFERENCES users(id) ON DELETE CASCADE,
   address varchar(255) NOT NULL,
   order_time timestamp NOT NULL,
+  deliver_time timestamp,
   delivered boolean NOT NULL,
   total_price real
 );

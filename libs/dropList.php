@@ -9,8 +9,9 @@ function getDropList($kysely) {
  
  for($i = 0; $i<$rows ; $i++) {
   $tmp = $res[$i];
+  $id = tmp['id'];
   $name = $tmp['name'];
-  $str = "<option value='{$name}'>{$name}</option>";
+  $str = "<option value='{$id}'>{$name}</option>";
   echo $str;
  }
 }?>

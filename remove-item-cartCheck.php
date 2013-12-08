@@ -2,10 +2,8 @@
       require_once 'libs/db_connect.php';
       $yhteys = getConnection();
       $uid = $_SESSION['userId']; // user id
-      $str = pg_escape_string($yhteys, $_POST['orderlist']);
-      $query = pg_query($yhteys, "SELECT id FROM products WHERE name='{$str}';");
-      $pid = pg_fetch_result($query, 0, 0); //product id
-      $sql = "DELETE FROM cart_map WHERE user_id='{$uid}' AND product_id='{$pid}' AND ordered=FALSE;";
+      $id = pg_escape_string($yhteys, $_POST['orderlist']);
+      $sql = "DELETE FROM cart_map WHERE user_id='{$uid}' AND id='{$id}' AND ordered=FALSE;";
 
       pg_query($yhteys, $sql);
       pg_close($yhteys);

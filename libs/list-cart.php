@@ -16,10 +16,19 @@ function getCartList($kysely) {
   			$name = $tmp['name'];
 			$kpl = $tmp['kpl'];
 			$price = $tmp['price'];
-			if($kpl == 1)
-			 echo "<li>{$name}, {$kpl} kappale. Hinta: {$price}</li>";
-			else
+			$mats = $tmp['mats'];
+			if($kpl == 1) {
+			 echo "<li>{$name}, {$kpl} kappale. Hinta: {$price}";
+				if(!empty($mats))
+					echo "</br>Lisukkeet: {$mats}";
+			 echo "</li>"; 			
+			}
+			else {
 			 echo "<li>{$name}, {$kpl} kappaletta. Hinta: {$price}</li>";
+			 	if(!empty($mats))
+					echo "</br>Lisukkeet: {$mats}";
+			 echo "</li>";	
+			}
 		}
 		echo "</ol>";
 		return 0;

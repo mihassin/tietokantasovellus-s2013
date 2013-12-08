@@ -1,4 +1,5 @@
-<?php require_once 'libs/listqueries.php';
+<?php require_once 'libs/checkAccess.php';
+      require_once 'libs/listqueries.php';
       $kysely = getOrders();
       require_once 'views/header.php';
       echo "<h1>Tilaukset</h1>";

@@ -13,6 +13,7 @@ if((price <= 0) && (!is_numeric($price)) ) {
 }
 
 $type = pg_escape_string($yhteys, $_POST['product-type-list']);
+$type = intval($type);
 
 $name = pg_escape_string($yhteys, $_POST['name']); //lisukkeiden description ja tuotteiden name
 $name = checkData($name);

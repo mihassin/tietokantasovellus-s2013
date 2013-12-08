@@ -5,10 +5,10 @@
  <?php getDropList($kysely); ?>
 </select>
 <form method='post' action='deliver-check.php' id='deliform'>
- <label>Toimitusaika</label></br>
- <input type='text' name='time' value='tt:mm:ss' /></br>
+ <label>Toimitusaika *</label></br>
+ <input type='text' name='time' value='12:00:00' /></br>
  <label>Alennettu hinta</label></br>
- <input type='text' name='price' /></br>
+ <input type='text' name='price' /></br></br>
  <input type='submit' value='Merkitse toimitetuksi' />
 </form>
 <?php require_once 'footer.php'; ?>

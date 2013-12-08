@@ -1,21 +1,21 @@
 <?php 
 	function getMenu() {
-		$querystr = "SELECT name, price FROM products WHERE product_type_id='1'";
+		$querystr = "SELECT id, name, price FROM products WHERE product_type_id='1'";
 		return $querystr;
 	}
 
 	function getDrinks() {
-		$querystr = "SELECT name, price FROM products WHERE product_type_id='2'";
+		$querystr = "SELECT id, name, price FROM products WHERE product_type_id='2'";
 		return $querystr;
 	}
 
 	function getMaterials() {
-		$querystr = "SELECT description as name, price FROM materials";
+		$querystr = "SELECT id, description as name, price FROM materials";
 		return $querystr;
 	}
 
         function getUsers() {
-		$querystr = "SELECT email, first, second, phone FROM users";
+		$querystr = "SELECT id, email, first, second, phone FROM users";
 		return $querystr;
 	}
 
@@ -25,7 +25,7 @@
 	}
 
         function getCartByUid($uid) {
-        	$querystr = "SELECT products.name as name, cart_map.amount as kpl, cart_map.price as price FROM products, cart_map WHERE products.id = cart_map.product_id AND cart_map.ordered = FALSE AND cart_map.user_id = {$uid};";
+        	$querystr = "SELECT cart_map.id as id, products.name as name, cart_map.amount as kpl, cart_map.price as price FROM products, cart_map WHERE products.id = cart_map.product_id AND cart_map.ordered = FALSE AND cart_map.user_id = {$uid};";
         	return $querystr;
         }
 
